@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubScout AI | Your Financial Guardian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="text-2xl font-bold gradient-text underline">SubScout AI</div>
+        <div class="hidden md:flex space-x-8 text-gray-400">
+            <a href="#features" class="hover:text-white">Features</a>
+            <a href="#demo" class="hover:text-white font-bold text-sky-400">Try Demo</a>
+        </div>
+    </nav>
+
+    <header class="py-20 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Stop bleeding <span class="gradient-text">money.</span></h1>
+        <p class="text-xl text-gray-400 mb-10">SubScout uses advanced AI to hunt down "zombie subscriptions" and negotiates your bills lower—automatically.</p>
+        <a href="#demo" class="bg-sky-500 hover:bg-sky-400 text-white px-8 py-4 rounded-full font-bold text-lg transition">Launch Toy App</a>
+    </header>
+
+    <section id="demo" class="py-20 px-6">
+        <div class="max-w-xl mx-auto glass p-8 rounded-3xl shadow-2xl">
+            <h2 class="text-2xl font-bold mb-4 text-center">Interactive Demo</h2>
+            <p class="text-sm text-gray-400 mb-6 text-center">Click the button to simulate an AI scan of your monthly bank statement.</p>
+            
+            <div id="app-container" class="space-y-4">
+                <button onclick="runDemo()" id="scan-btn" class="w-full bg-indigo-600 p-4 rounded-xl font-bold hover:bg-indigo-500 transition">Scan Bank Account</button>
+                
+                <div id="results" class="hidden space-y-3">
+                    <div class="p-4 bg-red-900/20 border border-red-500/50 rounded-lg flex justify-between items-center animate-pulse">
+                        <span>Forgotten Gym Membership</span>
+                        <span class="font-bold text-red-400">-$49.99</span>
+                    </div>
+                    <div class="p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-lg flex justify-between items-center">
+                        <span>Cable Bill (Negotiable)</span>
+                        <span class="font-bold text-yellow-400">Save $25/mo</span>
+                    </div>
+                    <div class="p-4 bg-green-900/20 border border-green-500/50 rounded-lg text-center mt-4">
+                        <p class="text-sm text-green-400 font-bold underline">Total Annual Savings Found: $899.88</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 text-xs border-t border-gray-800">
+        &copy; 2026 SubScout AI - Final Project Submission
+    </footer>
+
+    <script>
+        function runDemo() {
+            const btn = document.getElementById('scan-btn');
+            const results = document.getElementById('results');
+            btn.innerText = "Scanning Transactions...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.style.display = 'none';
+                results.classList.remove('hidden');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
